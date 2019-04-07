@@ -1,0 +1,60 @@
+body{
+    font-family: 'Cantarell', sans-serif;
+    height: auto;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-image: url('../images/alton1.jpg');
+    background-size: inherit;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #000019;
+}
+#game{
+    margin: auto;
+    width: 75%;
+    margin-top: 50px;
+    background-color: #f4f4f7;
+    align-content: center;
+    border: 4px solid #CCAA12;
+}
+h1{
+    font-family: 'Niconne', cursive;
+    font-size: 48px;
+    color: #806800;
+    text-align: center;
+    padding: 10px;
+    text-decoration: underline;
+    text-decoration-color: #CCAA12;
+}
+#numbers{
+    font-family: 'Nunito', sans-serif;
+    margin: auto;
+    text-align: center;
+}
+button{
+    position: relative;
+    margin: auto;
+    margin-bottom: 10px;
+    border:1px solid #CCAA12;
+	display:inline-block;
+	cursor:pointer;
+	color:#CCAA12;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:11px 23px;
+    text-decoration:none;
+    background-color: #3030FF;
+}
+#triviaCard{
+    display: none;
+    margin: 10px;
+}
+
+#triviaCard h1{
+    color: #0976D9;
+    text-align: left;
+    margin: 5px;
+    font-size: 40px;
+    text-decoration: none;
+}
