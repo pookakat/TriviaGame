@@ -31,6 +31,9 @@ h1{
     margin: auto;
     text-align: center;
 }
+#score{
+    margin-top: 20px;
+}
 button{
     position: relative;
     margin: auto;
