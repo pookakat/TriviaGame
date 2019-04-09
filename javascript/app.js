@@ -39,19 +39,33 @@ $( document ).ready(function() {
         }
     }
     
-    let askIt={
+    let askIt = {
         "question" : "What taste receptors do cats lack?",
-        "answer" : "sweet",
+        "answer" : ["sweet"],
+        "notOne" : ["bitter", "sour", "umame"],
     }
 
+    function questionMaker(){
+        const options = askIt.answer.concat(askIt.notOne);
+        const $options = $('<ul>');
+        console.log(options);
+        while( options.length ) {
+            let answer = options.splice(Math.floor(Math.random() * options.length),1);
+            $options.append('<li><input type="radio" class = "guesses" name = "guess" value="' + answer + '" >' + answer + '</li>');
+        }
+        console.log($options);
+        return $options;
+    };
+     
+
     function triviaQuestion(){
+        $('#triviaQuestion input:radio').checked = false;
         $('input[type = radio]').attr('disabled', false);
         $('#whatQuestion').html('<h1> Question '+i+' </h1>');
         $('#triviaQuestion').html(askIt.question);
-        $('#triviaQuestion').append('<ul><li><input type="radio" name = "guess" value="answer"> Lots</li>');
-        $('#triviaQuestion').append('<ul><li><input type="radio" name = "guess" value="notone"> None</li>');
-        $('#triviaQuestion').append('<ul><li><input type="radio" name = "guess" value="notone"> Some</li>');
-        $('#triviaQuestion').append('<ul><li><input type="radio" name = "guess" value="notone"> Gorilla</li>');
+        $('#triviaQuestion').append(
+            questionMaker()
+        );
         i++;
         $('#triviaQuestion input:radio').click(function(){
             $('input[type = radio]').attr('disabled', true);
@@ -60,16 +74,21 @@ $( document ).ready(function() {
         });
     }
     function checkAnswer(chosen){
-        if (chosen === "answer"){
+        $()
+        if (chosen === askIt.answer[0]){
             score += 100;
             $('#score').text('Right! Your score is now ' + score + '!');
-            $('input[type = radio]').attr('disabled', false);
             timeLeft += 30;
+            $('#triviaQuestion').html('<h2>Right!</h2>');
+            setTimeout(triviaQuestion, 1000);
         }
         else{
             $('#triviaQuestion').html('<h2> Wrong! The answer was: '+ askIt.answer);
             pauseTimer();
         }
+    }
+    function unclick(clicked){
+        clicked.checked = false;
     }
 
     function pauseTimer(){
