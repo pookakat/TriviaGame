@@ -2,9 +2,13 @@ let timeLeft=30;
 let timer;
 let i=1;
 let score = 0;
-//figure out import
+let askIt;
+let currentQuestions;
+
 $( document ).ready(function() {
     $('button').click(function(){
+        currentQuestions = questions.slice(0);
+        console.log(questions, currentQuestions);
         $('#triviaCard').show();
         timeLeft=30;
         if ($('button').hasClass("started")){
@@ -40,13 +44,8 @@ $( document ).ready(function() {
         }
     }
     
-    /*let askIt = {
-        "question" : "What taste receptors do cats lack?",
-        "answer" : ["sweet"],
-        "notOne" : ["bitter", "sour", "umame"],
-    }*/
-
-    function questionMaker(){
+    function questionMaker(askIt){
+        console.log(askIt);
         const options = askIt.answer.concat(askIt.notOne);
         const $options = $('<ul>');
         while( options.length ) {
@@ -58,22 +57,30 @@ $( document ).ready(function() {
      
 
     function triviaQuestion(){
-        $('#triviaQuestion input:radio').checked = false;
-        $('input[type = radio]').attr('disabled', false);
-        $('#whatQuestion').html('<h1> Question '+i+' </h1>');
-        $('#triviaQuestion').html(askIt.question);
-        $('#triviaQuestion').append(
-            questionMaker()
-        );
-        i++;
-        $('#triviaQuestion input:radio').click(function(){
-            $('input[type = radio]').attr('disabled', true);
-            var radioValue=$("input[name='guess']:checked").val();
-            checkAnswer(radioValue);
-        });
+        console.log(i);
+        if (i<=5){
+            askIt=getAQuestion(currentQuestions);
+            $('#triviaQuestion input:radio').checked = false;
+            $('input[type = radio]').attr('disabled', false);
+            $('#whatQuestion').html('<h1> Question '+i+' </h1>');
+            $('#triviaQuestion').html(askIt.question);
+            $('#triviaQuestion').append(
+                questionMaker(askIt)
+            );
+            i++;
+            $('#triviaQuestion input:radio').click(function(){
+                $('input[type = radio]').attr('disabled', true);
+                var radioValue=$("input[name='guess']:checked").val();
+                checkAnswer(radioValue);
+            });
+        }
+        else{
+            $('#score').html('<h1>Game Over!</h1>');
+            $('#score').append('Your total score: ' + score);
+            pauseTimer();
+        }
     }
     function checkAnswer(chosen){
-        $()
         if (chosen === askIt.answer[0]){
             score += 100;
             $('#score').text('Right! Your score is now ' + score + '!');
