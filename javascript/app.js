@@ -2,6 +2,7 @@ let timeLeft=30;
 let timer;
 let i=1;
 let score = 0;
+//figure out import
 $( document ).ready(function() {
     $('button').click(function(){
         $('#triviaCard').show();
@@ -39,21 +40,19 @@ $( document ).ready(function() {
         }
     }
     
-    let askIt = {
+    /*let askIt = {
         "question" : "What taste receptors do cats lack?",
         "answer" : ["sweet"],
         "notOne" : ["bitter", "sour", "umame"],
-    }
+    }*/
 
     function questionMaker(){
         const options = askIt.answer.concat(askIt.notOne);
         const $options = $('<ul>');
-        console.log(options);
         while( options.length ) {
             let answer = options.splice(Math.floor(Math.random() * options.length),1);
             $options.append('<li><input type="radio" class = "guesses" name = "guess" value="' + answer + '" >' + answer + '</li>');
         }
-        console.log($options);
         return $options;
     };
      
