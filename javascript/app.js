@@ -8,9 +8,9 @@ let currentQuestions;
 $( document ).ready(function() {
     $('button').click(function(){
         currentQuestions = questions.slice(0);
-        console.log(questions, currentQuestions);
         $('#triviaCard').show();
         timeLeft=30;
+        $('#timer').toggle();
         if ($('button').hasClass("started")){
             clearTimeout(timer);
             $('#triviaCard').hide();

@@ -31,6 +31,9 @@ h1{
     margin: auto;
     text-align: center;
 }
+#timer{
+    display: none;
+}
 #score{
     margin-top: 20px;
 }
