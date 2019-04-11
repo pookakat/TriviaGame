@@ -58,7 +58,7 @@ $( document ).ready(function() {
 
     function triviaQuestion(){
         console.log(i);
-        if (i<=5){
+        if (i<=20){
             askIt=getAQuestion(currentQuestions);
             $('#triviaQuestion input:radio').checked = false;
             $('input[type = radio]').attr('disabled', false);
