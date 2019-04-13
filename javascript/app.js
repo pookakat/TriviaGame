@@ -13,24 +13,21 @@ $( document ).ready(function() {
         currentQuestions = questions.slice(0);
         $('#timer').toggle();
         if ($('button').hasClass("started")){
-            $('body').removeClass('gameBackground');
-            $('body').addClass('startBackground');
             clearTimeout(timer);
             timeLeft = 0;
             $('#triviaCard').hide();
             $('#triviaQuestion').text('');
-            i = 1;
             $('button').text("Start the Game!");
             $('button').removeClass("started"); 
             $('#score').text('Your total score: ' + score);
             score = 0; 
         }
         else{
-            $('body').removeClass('startBackground');
-            $('body').addClass('gameBackground');
+            if (i!=1){
+                i=1;
+            }
             $('button').text("Counting Down");
             $('button').addClass("started");
-            $('startBackground').css('background-image', "url('../images/gameBackground.jpg')");
             $('#otherStuff').removeClass('endGame');
             $('#otherStuff').hide();
             triviaQuestion();
@@ -128,9 +125,6 @@ $( document ).ready(function() {
     }
 
     function endGame(){
-        $('body').removeClass('gameBackground');
-        $('body').addClass('startBackground');
-        $('#score').hide();
         clearTimeout(timer);
         timer = null;
         let bonusScore=timeForBonus*3;

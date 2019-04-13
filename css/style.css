@@ -3,6 +3,7 @@ body{
     min-height: 100vh;
     min-width: 100vw;
     background-repeat: no-repeat;
+    background-image: url('../images/alton1.jpg');
     background-position: center;
     background-color: #000019;
 }
@@ -14,12 +15,7 @@ body{
     align-content: center;
     border: 4px solid #CCAA12;
 }
-.startBackground{
-    background-image: url('../images/alton1.jpg');
-}
-.gameBackground{
-    background-image: url('../images/gameBackground.jpg');
-}
+
 #game{
     margin: auto;
     width: 75%;
