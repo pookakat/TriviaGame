@@ -130,6 +130,7 @@ $( document ).ready(function() {
     function endGame(){
         $('body').removeClass('gameBackground');
         $('body').addClass('startBackground');
+        $('#score').hide();
         clearTimeout(timer);
         timer = null;
         let bonusScore=timeForBonus*3;
@@ -142,8 +143,8 @@ $( document ).ready(function() {
         $('#otherStuff').addClass('endGame');
         $('#otherStuff').html('<h1>Game Over!</h1>');
         $('#otherStuff').append('<h2> Good job! You answered <span class="green">'+ correctAnswers +'</span> correcty and <span class="red">'+ incorrectAnswers + '</span> incorrectly out of 20.');
-        $('#otherStuff').append('<h2> Your time left on correct questions was ' + timeForBonus +'seconds! </h2>');
-        $('#otherStuff').append('<h2> Your total score is: '+ totalScore + 'points!</h2>');
+        $('#otherStuff').append('<h2> Your time left on correct questions was ' + timeForBonus +' seconds! </h2>');
+        $('#otherStuff').append('<h2> Your total score is: '+ totalScore + ' points!</h2>');
     }
 
     function unclick(clicked){
