@@ -1,13 +1,22 @@
 body{
     font-family: 'Cantarell', sans-serif;
-    height: auto;
     min-height: 100vh;
     min-width: 100vw;
     background-image: url('../images/alton1.jpg');
-    background-size: inherit;
     background-repeat: no-repeat;
     background-position: center;
     background-color: #000019;
+}
+.gameWindow{
+    margin: auto;
+    width: 75%;
+    margin-top: 20px;
+    background-color: #f4f4f7;
+    align-content: center;
+    border: 4px solid #CCAA12;
+}
+.startBackground{
+    background-image: url('../images/alton1.jpg');
 }
 #game{
     margin: auto;
@@ -17,6 +26,13 @@ body{
     align-content: center;
     border: 4px solid #CCAA12;
 }
+.start{
+    margin-top: 200px;
+    margin-bottom: 30px;
+    width: 25%;
+    padding: 20px;
+    font-size: 52px;
+  }
 h1{
     font-family: 'Niconne', cursive;
     font-size: 48px;
@@ -31,17 +47,33 @@ h1{
     margin: auto;
     text-align: center;
 }
-#timer{
-    display: none;
+.show{
+    display: inline-block;
 }
 #score{
-    margin-top: 20px;
+    margin-top: -50px;
+    position: absolute;
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    padding: 2px;
+    font-size: 24px;
+    text-shadow: #7812CC 3px 5px 2px;
+    background-color: #000019;
+    color: #FFDA30;
+    right: 21%;
+}
+#timer{
+    display: none;
+    color:#3ECC12;
+    font-size: 24px;
+    margin: 10px;
 }
 button{
     position: relative;
     margin: auto;
     margin-bottom: 10px;
-    border:1px solid #CCAA12;
+    border:3px solid #CCAA12;
+    border-radius: 10px;
 	display:inline-block;
 	cursor:pointer;
 	color:#CCAA12;
@@ -54,7 +86,12 @@ button{
 }
 #triviaCard{
     display: none;
-    margin: 10px;
+    padding: 50px;
+}
+
+#otherStuff{
+    display:none;
+    padding: 50px;
 }
 
 #triviaCard h1{
@@ -64,13 +101,81 @@ button{
     font-size: 40px;
     text-decoration: none;
 }
+#otherStuff{
+    text-align: center;
+    width: 75%;
+    height: 200px;
+}
 
 ul{
     list-style-type: none;
 }
+.win{
+    background-image: url('../images/confetti.jpg');
+}
+.defeat{
+    background-image: url('../images/altonWrong.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+}
 
-#triviaQuestion h2{
+.win h1 {
+    font-family: 'Sonsie One', cursive;
+    color: #3D7C19;  
+    text-decoration: none;
+    text-shadow: black 3px 2px 3px;
+}
+
+.win h2{
     font-family: 'Nunito', sans-serif;
+    color: #3D7C19;
+    text-decoration: none;
+    font-size: 40px;
+    text-shadow: black 3px 2px 3px;
+}
+
+.defeat h1 {
+    font-family: 'Shojumaru', cursive;
+    color: red;   
+    text-decoration: none;
+    text-shadow: black 3px 2px 3px;
+}
+
+.defeat h2{
+    font-family: 'Kurale', serif;
+    color: #0976D9;
+    text-decoration: none;
+    font-size: 40px;
+    text-shadow: black 3px 2px 3px;
+}
+
+.endGame{
+    background-image: url('../images/altonRight.jpg');
+    height: 500px;
+    width: 75%;
+    background-size: cover;
+}
+
+.endGame h1{
+    font-family: 'Nunito', sans-serif;
+    color: #B38B00;
+    text-decoration: none;
+    text-shadow: black 3px 2px 3px; 
+}
+
+.endGame h2{
+    font-family: 'Nunito', sans-serif;
+    color: #0976D9;
+    text-decoration: none;
+    font-size: 40px;
+    text-shadow: black 3px 2px 3px;
+}
+
+.green{
+    color: #3D7C19;
+}
+
+.red{
     color: red;
-    size: 36px;
 }

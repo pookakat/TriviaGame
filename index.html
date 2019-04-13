@@ -10,20 +10,25 @@
     <link href="https://fonts.googleapis.com/css?family=Cantarell" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Niconne" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sonsie+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kurale" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Shojumaru" rel="stylesheet">
 </head>
-<body>
-    <div id="game">
+<body class="startBackground">
+    <div id="titleBar" class="gameWindow start">
         <h1>Cat Trivia</h1>
-        <div id="numbers">
-            <div id="timer">&nbsp;</div>
-            <div id="score">&nbsp;</div>
-            <button id="startGame"><p>Start the Game</p></button>
-        </div>
-        <div id="triviaCard">
-            <div id="whatQuestion"></div>
-            <div id="triviaQuestion">
-            </div>
-        </div>
+     </div>
+    <div id="numbers">
+       <div id="timer">&nbsp;</div>
+       <button id="startGame start"><p>Start the Game</p></button>
+    </div>
+    <div id="score" class="show">&nbsp;</div>
+    <div id="triviaCard" class="gameWindow">
+        <div id="whatQuestion"></div>
+        <div id="triviaQuestion"></div>
+    </div>
+    <div id="otherStuff" class="gameWindow">
+
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="javascript/quiz.js"></script>
