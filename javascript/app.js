@@ -13,6 +13,8 @@ $( document ).ready(function() {
         currentQuestions = questions.slice(0);
         $('#timer').toggle();
         if ($('button').hasClass("started")){
+            $('body').removeClass('gameBackground');
+            $('body').addClass('startBackground');
             clearTimeout(timer);
             timeLeft = 0;
             $('#triviaCard').hide();
@@ -24,8 +26,11 @@ $( document ).ready(function() {
             score = 0; 
         }
         else{
+            $('body').removeClass('startBackground');
+            $('body').addClass('gameBackground');
             $('button').text("Counting Down");
             $('button').addClass("started");
+            $('startBackground').css('background-image', "url('../images/gameBackground.jpg')");
             $('#otherStuff').removeClass('endGame');
             $('#otherStuff').hide();
             triviaQuestion();
@@ -123,6 +128,8 @@ $( document ).ready(function() {
     }
 
     function endGame(){
+        $('body').removeClass('gameBackground');
+        $('body').addClass('startBackground');
         clearTimeout(timer);
         timer = null;
         let bonusScore=timeForBonus*3;

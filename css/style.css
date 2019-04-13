@@ -2,7 +2,6 @@ body{
     font-family: 'Cantarell', sans-serif;
     min-height: 100vh;
     min-width: 100vw;
-    background-image: url('../images/alton1.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-color: #000019;
@@ -17,6 +16,9 @@ body{
 }
 .startBackground{
     background-image: url('../images/alton1.jpg');
+}
+.gameBackground{
+    background-image: url('../images/gameBackground.jpg');
 }
 #game{
     margin: auto;
