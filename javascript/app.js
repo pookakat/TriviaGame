@@ -21,6 +21,7 @@ $( document ).ready(function() {
             $('button').removeClass("started"); 
             $('#score').text('Your total score: ' + score);
             score = 0; 
+            clearInterval(timer);
         }
         else{
             if (i!=1){
@@ -38,6 +39,7 @@ $( document ).ready(function() {
             timer = setInterval(countDown, 1000);
         }
     });
+    
     function countDown(){
         $('#timer').text( timeLeft + ' seconds!');
         timeLeft--;
@@ -139,6 +141,7 @@ $( document ).ready(function() {
         $('#otherStuff').append('<h2> Good job! You answered <span class="green">'+ correctAnswers +'</span> correcty and <span class="red">'+ incorrectAnswers + '</span> incorrectly out of 20.');
         $('#otherStuff').append('<h2> Your time left on correct questions was ' + timeForBonus +' seconds! </h2>');
         $('#otherStuff').append('<h2> Your total score is: '+ totalScore + ' points!</h2>');
+        score = 0;
     }
 
     function unclick(clicked){
@@ -146,11 +149,14 @@ $( document ).ready(function() {
     }
 
     function pauseTimer(){
+        $('button').hide();
         clearTimeout(timer);
+        timer=null;
         setTimeout(restart, 3000);
     }
     
     function restart(){
+        $('button').show();
         $('#otherStuff').hide();
         $('#otherStuff').empty();
         triviaQuestion();
